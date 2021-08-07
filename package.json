@@ -4,7 +4,8 @@
   "description": "Application to calculate the Body Mass Index (BMI)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "jest",
+    "test:cov": "jest --coverage",
     "start": "node src/app.ts",
     "build": "tsc"
   },
@@ -26,7 +27,30 @@
     "stream-json": "^1.7.2"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.24",
     "@types/node": "^16.4.13",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
     "typescript": "^4.3.5"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "coverageReporters": [
+      "html"
+    ]
   }
 }

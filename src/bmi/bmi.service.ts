@@ -9,7 +9,7 @@ module.exports = class BMIService {
     * @returns void, Empty result
     * @returns Exception, @see [Base Exceptions](https://docs.nestjs.com/exception-filters#base-exceptions)
     */
-    calculateBMI(key: number, value: any) {
+    calculateBMI(key, value) {
         try {
             console.log(key, value);
         } catch (error) {
