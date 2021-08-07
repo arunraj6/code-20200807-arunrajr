@@ -6,7 +6,7 @@ const jsonStream = StreamArray.withParser();
 fs.createReadStream('src/bmi/person.json').pipe(jsonStream.input); // To read the input JSON data
 
 const bmiService = new BMIService();
-jsonStream.on('data', ({ key, value }) => {
+jsonStream.on('data', (key: number, value: any) => {
     bmiService.calculateBMI(key, value);
 });
 

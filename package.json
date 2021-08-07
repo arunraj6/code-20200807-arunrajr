@@ -2,10 +2,11 @@
   "name": "code-20200807-arunrajr",
   "version": "1.0.0",
   "description": "Application to calculate the Body Mass Index (BMI)",
-  "main": "app.ts",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "start": "node src/app.ts"
+    "start": "node src/app.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
