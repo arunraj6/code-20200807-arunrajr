@@ -16,3 +16,4 @@ jobs:
     - run: npm run test
     - run: npm run test:cov
     - run: npm run build
+    # - run: npm run deploy # Deployment to a server if out of scope
