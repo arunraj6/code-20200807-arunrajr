@@ -13,5 +13,5 @@ jsonStream.on('data', (value) => {
 });
 
 jsonStream.on('end', () => {
-    console.log('Calculation completed!');
+    console.log('\nTotal number of overweight people: ', bmiService.totalOverWeight);
 });

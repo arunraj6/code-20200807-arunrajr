@@ -1,6 +1,8 @@
 module.exports = class BMIService {
 
-    //#region PUBLIC METHODS
+    //#region MAIN METHODS/ VARIABLES
+
+    totalOverWeight = 0;
 
     /**
     * Calculate BMI per Person and print the result
@@ -54,6 +56,7 @@ module.exports = class BMIService {
         else if (bmi >= 25 && bmi <= 29.9) {
             category = 'Overweight';
             healthRisk = 'Enhanced risk';
+            this.totalOverWeight++;
         }
         else if (bmi >= 30 && bmi <= 34.9) {
             category = 'Moderately obese';
