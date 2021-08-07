@@ -1,10 +1,13 @@
-# BMI calculator
-Application to calculate the Body Mass Index (BMI)
+# BMI Calculator
+Application to calculate the Body Mass Index (BMI).
 
-## run
+## Description
+Calculate the BMI for a given set of input from `src/bmi/person.json` here.
 
-Use command `npm run start` to run the API
+## Run the Calculator
 
-## run test
+Use command `npm run start` to run the application.
 
-Use command `npm test` to run the test methods
+## Run test methods
+
+Use command `npm test` to run the test methods.
