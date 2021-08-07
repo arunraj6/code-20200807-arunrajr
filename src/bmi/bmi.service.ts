@@ -1,4 +1,5 @@
 module.exports = class BMIService {
+
     //#region PUBLIC METHODS
 
     /**
@@ -10,18 +11,15 @@ module.exports = class BMIService {
     */
     calculateBMI(inputData) {
         try {
-            if (this.isValidateInput(inputData)) {
-                const totalCount = inputData.length;
-                for (let i = 0; i < totalCount; i++) {
-                    const person = inputData[i]?.value;
-                    const bmi = this.getBMI(person);
-                    console.log(bmi);
-                }
+            if (this.isValidInput(inputData)) {
+                const bmi = this.getBMI(inputData?.value);
+                const observations = this.getCategoryAndHealthRisk(bmi);
+                console.log(bmi, '\t', observations[0], '\t', observations[1]);
             } else {
-                console.log('Bad Input!');
+                this.logIssues('Bad Input!');
             }
         } catch (error) {
-            console.log(error);
+            this.logIssues(error);
             throw error;
         }
     }
@@ -30,8 +28,9 @@ module.exports = class BMIService {
 
     //#region HELPER METHODS
 
-    isValidateInput(value) {
-        return (value && value.length > 0) ? true : false;
+    isValidInput(value) {
+        // Check for the valid input from the JSON
+        return (value && Object.keys(value).length > 0) ? true : false;
     }
 
     getBMI(person) {
@@ -39,5 +38,50 @@ module.exports = class BMIService {
         return person?.WeightKg / ((person?.HeightCm / 100) * 2);
     }
 
+    getCategoryAndHealthRisk(bmi) {
+        let category = '';
+        let healthRisk = '';
+
+        // Logic to identify the Category and Health Risk based on bmi
+        if (bmi <= 18.4) {
+            category = 'Underweight';
+            healthRisk = 'Malnutrition risk';
+        }
+        else if (bmi >= 18.5 && bmi <= 24.9) {
+            category = 'Normal weight';
+            healthRisk = 'Low risk';
+        }
+        else if (bmi >= 25 && bmi <= 29.9) {
+            category = 'Overweight';
+            healthRisk = 'Enhanced risk';
+        }
+        else if (bmi >= 30 && bmi <= 34.9) {
+            category = 'Moderately obese';
+            healthRisk = 'Medium risk';
+        }
+        else if (bmi >= 35 && bmi <= 39.9) {
+            category = 'Severely obese';
+            healthRisk = 'High risk';
+        }
+        else if (bmi >= 40) {
+            category = 'Very severely obese';
+            healthRisk = 'Very high risk';
+        } else {
+            this.logIssues('Bad Input from getCategoryAndHealthRisk()');
+        }
+        return [category, healthRisk];
+    }
+
+    logIssues(issue) {
+        // A common logic to log issues
+        console.log(issue)
+    }
+
+    buildHeader() {
+        console.log('BMI Range\t\t Category\t Risk');
+        console.log('------------------------------------------------------');
+    }
+
     //#endregion
+
 }
