@@ -1,0 +1,30 @@
+{
+  "name": "code-20200807-arunrajr",
+  "version": "1.0.0",
+  "description": "Application to calculate the Body Mass Index (BMI)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node src/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArunRaj6/code-20200807-arunrajr.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Arun Raj R",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArunRaj6/code-20200807-arunrajr/issues"
+  },
+  "homepage": "https://github.com/ArunRaj6/code-20200807-arunrajr#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "stream-json": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.13"
+  }
+}
