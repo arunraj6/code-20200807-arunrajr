@@ -16,7 +16,15 @@ Used <b>GitHub Actions Workflows</b> to setup the pipeline `.github/workflows/ma
     - Building the application
     - Server deployment (out of scope)
 
-## Run the Calculator
+## Setup the application
+
+Use command `npm install` to install all the dependencies.
+
+## Build the application
+
+Use command `npm run build` to build the application.
+
+## Run the application
 
 Use command `npm run start` to run the application.
 
