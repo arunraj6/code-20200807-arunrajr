@@ -19,9 +19,9 @@ module.exports = class BMIService {
                 console.log(bmi, '\t', observations[0], '\t', observations[1]);
             } else {
                 this.logIssues('Bad Input!');
+                throw new Error('Bad Input!');
             }
         } catch (error) {
-            this.logIssues(error);
             throw error;
         }
     }
