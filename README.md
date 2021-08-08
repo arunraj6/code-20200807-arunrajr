@@ -23,3 +23,9 @@ Use command `npm run start` to run the application.
 ## Run test methods
 
 Use command `npm test` to run the test methods.
+
+## Run code coverage
+
+Use command `npm test:cov` to run the code coverage.
+
+Can see the code coverage report for business logic in `coverage/src/bmi/index.html`
